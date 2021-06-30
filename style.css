@@ -1,124 +1,123 @@
-*{
-    margin: 0%;
+* {
+  margin: 0%;
 }
-.nav{
-    display: inline-block;
-    width: 20%;
-    height: 110vh;
-    background-color: grey;
-    float: left;
+.nav {
+  display: block;
+  width: 15%;
+  height: 110vh;
+  background-color: grey;
+  float: left;
 }
 .nav a {
-    display: block;
-    border: 2px solid black;
-    margin: 5px;
-    padding: 4px;
-    font-size: larger;
-    text-decoration: none;
-    color: black;
+  text-align: center;
+  display: block;
+  border-bottom: 3px solid black;
+
+  padding: 10px;
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
 }
-.content{
-    display: inline-block;
+.content {
+  display: inline-block;
 }
-.content h1{
-    margin-top: 10px;
+.content h1 {
+  margin-top: 10px;
 }
-.section-one,.section-two{
-    margin-left: 20px;
+.section-one,
+.section-two {
+  margin-left: 20px;
 }
-.card{
-    display: inline-block;
-    margin: 20px 0px;
-    border: 2px solid black;
+.card {
+  display: inline-block;
+  margin: 20px 0px;
+  border: 2px solid black;
 }
-.card-text{
-    padding: 8px;
-    margin: 0px 4px;
+.card-text {
+  padding: 8px;
+  margin: 0px 4px;
 }
-.card-button{
-    padding: 8px;
-    border: 2px solid black;
-    box-shadow: 2px 3px grey;
-    margin: 8px 4px;
+.card-button {
+  padding: 8px;
+  border: 2px solid black;
+  box-shadow: 2px 3px grey;
+  margin: 8px 4px;
 }
-#paymentDueTo{
-    margin-left: 20px;
+#paymentDueTo {
+  margin-left: 20px;
 }
 
 /* Table  */
 
 .lead-table table {
-    
-    width: auto;
-    font-family: Questrial;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 25px;
-    line-height: 31px;
-    letter-spacing: 0.12em;
-    border-collapse: collapse;
-    color: #000000;
-  }
-  .content-table th {
-    background-color: #8ae9bb;
-    color: black;
-    text-align: center;
-    font-size: 20px;
-    padding: 15px;
-   
-    
-  }
-  td {
-    font-size: 20px;
-    padding: 10px;
-  }
-  .content-table {
-    text-align: center;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #c0e7f0;
-  }
-  tr:nth-child(odd) {
-    background-color: #dff3f3;
-  }
-  td:nth-child(1),
-  th:nth-child(1) {
-    width: 10px;
-  }
-  td:nth-child(4),
-  th:nth-child(4) {
-    width: 200px;
-  }
-  td,
-  th {
-    border-right: 2px solid #000000;
-  }
-  td:nth-last-child(1),
-  th:nth-last-child(1) {
-    border: none;
-  }
-  .btn {
-    text-align: center;
-    padding: 0;
-    margin: 0px;
-    width: 80px;
-    height: 19px;
-    margin: 8px;
-    border-radius: 15px;
-    outline: none;
-    line-height: 21px;
-    letter-spacing: 0.12em;
-    color: #fdfcfc;
-    border: 0;
-    cursor: pointer;
-  }
-  .btn-edit {
-    background: #4e80bc;
-  }
-  .btn-del {
-    background: #e84d4d;
-  }
-  .table-margin{
-    margin: 20px 0px;
-  }
+  width: auto;
+  font-family: Questrial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 31px;
+  letter-spacing: 0.12em;
+  border-collapse: collapse;
+  color: #000000;
+}
+.content-table th {
+  background-color: #8ae9bb;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  padding: 15px;
+}
+td {
+  font-size: 20px;
+  padding: 10px;
+}
+.content-table {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: #c0e7f0;
+}
+tr:nth-child(odd) {
+  background-color: #dff3f3;
+}
+td:nth-child(1),
+th:nth-child(1) {
+  width: 10px;
+}
+td:nth-child(4),
+th:nth-child(4) {
+  width: 200px;
+}
+td,
+th {
+  border-right: 2px solid #000000;
+}
+td:nth-last-child(1),
+th:nth-last-child(1) {
+  border: none;
+}
+.btn {
+  text-align: center;
+  padding: 0;
+  margin: 0px;
+  width: 80px;
+  height: 19px;
+  margin: 8px;
+  border-radius: 15px;
+  outline: none;
+  line-height: 21px;
+  letter-spacing: 0.12em;
+  color: #fdfcfc;
+  border: 0;
+  cursor: pointer;
+}
+.btn-edit {
+  background: #4e80bc;
+}
+.btn-del {
+  background: #e84d4d;
+}
+.table-margin {
+  margin: 20px 0px;
+}
