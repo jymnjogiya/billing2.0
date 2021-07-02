@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <title>Dashboard</title>
 </head>
+
 <body>
     <div class="nav">
         <a href="#">Dashboard</a>
-        <a href="./customersList.html">Customer List</a>
+        <a href="./customersList.php">Customer List</a>
         <a href="#">Products List</a>
         <a href="#">InVoice Bill</a>
     </div>
@@ -22,7 +24,7 @@
                 <h2 class="card-text">1,00,000</h2>
                 <button class="card-button">Check Details</button>
             </div>
-            <div class="card" id="paymentDueTo" >
+            <div class="card" id="paymentDueTo">
                 <h2 class="card-text">Payment Due To Client</h2>
                 <h2 class="card-text">1,00,000</h2>
                 <button class="card-button">Check Details</button>
@@ -37,7 +39,7 @@
                     <th>Product Name</th>
                     <th>Size</th>
                     <th>Qty</th>
-                    
+
                     <th>Actions</th>
                 </tr>
                 </tr>
@@ -47,7 +49,7 @@
                     <td>Aluminium-35mic-0.8mm</td>
                     <td>1024 X 1024</td>
                     <td>1000 </td>
-                    
+
                     <td>
                         <button class="btn btn-edit">EDIT</button>
                         <button class="btn btn-del">DELETE</button>
@@ -59,18 +61,19 @@
                     <td> </td>
                     <td> </td>
                     <td> </td>
-                   
+
                     <td>
                         <button class="btn btn-edit">EDIT</button>
                         <button class="btn btn-del">DELETE</button>
                     </td>
                 </tr>
-    
-    
-            </table>  
+
+
+            </table>
 
         </div>
-        
+
     </div>
 </body>
+
 </html>
