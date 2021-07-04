@@ -19,26 +19,27 @@ $selections = mysqli_query($con, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Customer Details</title>
+
+    <!-- Icon SRC -->
+    <script src="https://kit.fontawesome.com/836db6b2a0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="screen">
-
         <div class="nav">
             <a href="./dashboard.php">Dashboard</a>
             <a href="#">Customer List</a>
-            <a href="#">Products List</a>
+            <a href="./category.php">Products List</a>
             <a href="#">InVoice Bill</a>
         </div>
         <div class="content">
-
-            <div class="section-one grid form">
+            <div class="section-one ">
                 <div class="head">
                     <h1>Customers Details</h1>
-                    <button class="add" id="add">Add</button>
+                    <button class="add" id="cust-add">Add</button>
                 </div>
                 <!-- Customer form -->
-                <form action="">
+                <form action="" id="cust-form" class="grid-form hidden">
                     <div>
                         <label for="">Company name</label>
                         <input type="text">
@@ -93,7 +94,7 @@ $selections = mysqli_query($con, $sql);
                 </form>
 
                 <!-- Customer Table -->
-                <table class="content-table table-margin">
+                <table class="content-table cust-table table-margin" id="cust-table">
                     <tr>
                         <th>Sr. No</th>
                         <th>Company Name</th>
@@ -102,7 +103,8 @@ $selections = mysqli_query($con, $sql);
                         <th>GST No.</th>
                         <!-- Why i cant add bank field. it is making table disapper-->
                         <th>Bank</th>
-                        <th>Actions</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
                     </tr>
                     <?php
                     $index = 0;
@@ -116,9 +118,12 @@ $selections = mysqli_query($con, $sql);
                             <td><?php echo $row['GST'] ?></td>
                             <td><?php echo $row['bank'] ?></td>
                             <td>
-                                <button class="btn btn-edit">EDIT</button>
-                                <button class="btn btn-del">DELETE</button>
+                                <i class="fas fa-pencil-alt"></i>
                             </td>
+                            <td>
+                                <i class="fas fa-trash-alt"></i>
+                            </td>
+
                         </tr>
 
                     <?php  } ?>
@@ -129,6 +134,7 @@ $selections = mysqli_query($con, $sql);
 
         </div>
     </div>
+    <script src="./customer.js"></script>
 </body>
 
 </html>
