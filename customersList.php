@@ -118,10 +118,10 @@ $selections = mysqli_query($con, $sql);
                             <td><?php echo $row['GST'] ?></td>
                             <td><?php echo $row['bank'] ?></td>
                             <td>
-                                <i class="fas fa-pencil-alt"></i>
+                                <a href=""> <i class="fas fa-pencil-alt"></i></a>
                             </td>
                             <td>
-                                <i class="fas fa-trash-alt"></i>
+                                <a href=""><i class="fas fa-trash-alt"></i></a>
                             </td>
 
                         </tr>
