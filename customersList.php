@@ -39,57 +39,57 @@ $selections = mysqli_query($con, $sql);
                     <button class="add" id="cust-add">Add</button>
                 </div>
                 <!-- Customer form -->
-                <form action="" id="cust-form" class="grid-form hidden">
+                <form action="./handleCustomerSubmit.php" method="POST" id="cust-form" class="grid-form hidden">
                     <div>
                         <label for="">Company name</label>
-                        <input type="text">
+                        <input type="text" name="componyName">
                     </div>
                     <div>
                         <label for="">Customer name</label>
-                        <input type="text">
+                        <input type="text" name="customerName">
                     </div>
                     <div>
                         <label for="">Mobile Number</label>
-                        <input type="text">
+                        <input type="text" name="mobileNumber">
                     </div>
                     <div>
                         <label for="">Email address</label>
-                        <input type="email">
+                        <input type="email" name="emailAddress">
                     </div>
                     <div>
                         <label for="">GST No.</label>
-                        <input type="text">
+                        <input type="text" name="gstNo">
                     </div>
                     <div>
                         <label for="">Bank Name</label>
-                        <input type="text">
+                        <input type="text" name="bankName">
                     </div>
                     <div>
                         <label for="">Bank Number</label>
-                        <input type="text">
+                        <input type="text" name="bankNumber">
                     </div>
                     <div>
                         <label for="">Bank IFSC Code</label>
-                        <input type="text">
+                        <input type="text" name="bankIfsc">
                     </div>
                     <div>
-                        <label for="">Address line 1</label>
-                        <input type="text">
+                        <label for="">Address  1</label>
+                        <input type="text" name="address1">
                     </div>
                     <div>
-                        <label for="">Address line 2</label>
-                        <input type="text">
+                        <label for="">Address 2</label>
+                        <input type="text" name="address2">
                     </div>
                     <div>
-                        <label for="">Address line 3</label>
-                        <input type="text">
+                        <label for="">Address 3</label>
+                        <input type="text" name="address3">
                     </div>
                     <div>
                         <label for="">Website</label>
-                        <input type="text">
+                        <input type="text" name="website">
                     </div>
                     <p>
-                        <button class="button">Save</button>
+                        <button class="button" type="submit">Save</button>
                     </p>
                 </form>
 
