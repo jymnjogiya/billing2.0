@@ -119,9 +119,11 @@ $selectionProduct = mysqli_query($con, "SELECT `prod_id`, `prod_name`, `cat_name
                             <label>Category:</label><br>
                             <select name="prod-category">
                                 <option value="">--- Select ---</option>
+                                <option value="">hello</option>
 
                                 <?php
-                                while ($rows = mysqli_fetch_array($selectionCategory)) {
+                                $selectionCat = mysqli_query($con, "SELECT * FROM `category`");
+                                while ($rows = mysqli_fetch_array($selectionCat)) {
                                 ?>
                                     <option value="<?php echo $rows['cat_id'] ?>"><?php echo $rows['cat_name'] ?></option>
                                 <?php  } ?>
