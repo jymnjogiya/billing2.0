@@ -7,6 +7,24 @@ $sql = "SELECT * FROM customers";
 
 $selections = mysqli_query($con, $sql);
 
+// for insertion of the customer table in db
+if (isset($_POST['cust-save'])) {
+    $bank = $_POST['bankName'];
+    $companyName = $_POST['companyName'];
+    $customerName = $_POST['customerName'];
+    $gstNo = $_POST['gstNo'];
+    $mobileNumber = $_POST['mobileNumber'];
+    $emailAddress = $_POST['emailAddress'];
+    $bankNumber = $_POST['bankNumber'];
+    $address1 = $_POST['address1'];
+    $address2 = $_POST['address2'];
+    $address3 = $_POST['address3'];
+    $website = $_POST['website'];
+    $ifsc = $_POST['bankifsc'];
+    $insertCustomerQuery = "INSERT INTO `customers`( `company_name`, `customer_name`, `mobile`, `GST`, `bank`, `email_address`, `bank_number`, `address1`, `address2`, `address3`, `website`, `ifsc`) VALUES ('$companyName','$customerName','$mobileNumber','$gstNo','$bank','$emailAddress','$bankNumber','$address1','$address2','$address3','$website','$ifsc')";
+    mysqli_query($con, $insertCustomerQuery);
+}
+
 ?>
 
 
@@ -39,10 +57,10 @@ $selections = mysqli_query($con, $sql);
                     <button class="add" id="cust-add">Add</button>
                 </div>
                 <!-- Customer form -->
-                <form action="./handleCustomerSubmit.php" method="POST" id="cust-form" class="grid-form hidden">
+                <form action="" method="POST" id="cust-form" class="grid-form hidden">
                     <div>
                         <label for="">Company name</label>
-                        <input type="text" name="componyName">
+                        <input type="text" name="companyName">
                     </div>
                     <div>
                         <label for="">Customer name</label>
@@ -70,10 +88,10 @@ $selections = mysqli_query($con, $sql);
                     </div>
                     <div>
                         <label for="">Bank IFSC Code</label>
-                        <input type="text" name="bankIfsc">
+                        <input type="text" name="bankifsc">
                     </div>
                     <div>
-                        <label for="">Address  1</label>
+                        <label for="">Address 1</label>
                         <input type="text" name="address1">
                     </div>
                     <div>
@@ -88,9 +106,7 @@ $selections = mysqli_query($con, $sql);
                         <label for="">Website</label>
                         <input type="text" name="website">
                     </div>
-                    <p>
-                        <button class="button" type="submit">Save</button>
-                    </p>
+                    <input type="submit" class="button" value="Save" name="cust-save">
                 </form>
 
                 <!-- Customer Table -->
