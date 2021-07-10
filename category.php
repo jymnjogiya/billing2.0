@@ -83,19 +83,21 @@ $selectionProduct = mysqli_query($con, "SELECT `prod_id`, `prod_name`, `cat_name
                         <?php
                         $index = 0;
                         while ($row = mysqli_fetch_array($selectionCategory)) {
+                            if ($row['isDeleted'] == 0) {
                         ?>
-                            <tr>
-                                <td><?php echo ++$index ?></td>
-                                <td><?php echo $row['cat_name'] ?></td>
-                                <td><?php echo $row['cat_remark'] ?></td>
-                                <td>
-                                    <a href=""> <i class="fas fa-pencil-alt"></i></a>
-                                </td>
-                                <td>
-                                    <a href=""><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                        <?php  } ?>
+                                <tr>
+                                    <td><?php echo ++$index ?></td>
+                                    <td><?php echo $row['cat_name'] ?></td>
+                                    <td><?php echo $row['cat_remark'] ?></td>
+                                    <td>
+                                        <a href=""> <i class="fas fa-pencil-alt"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href=""><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                        <?php }
+                        } ?>
                     </table>
 
                 </div>
@@ -119,8 +121,6 @@ $selectionProduct = mysqli_query($con, "SELECT `prod_id`, `prod_name`, `cat_name
                             <label>Category:</label><br>
                             <select name="prod-category">
                                 <option value="">--- Select ---</option>
-                                <option value="">hello</option>
-
                                 <?php
                                 $selectionCat = mysqli_query($con, "SELECT * FROM `category`");
                                 while ($rows = mysqli_fetch_array($selectionCat)) {
@@ -169,23 +169,25 @@ $selectionProduct = mysqli_query($con, "SELECT `prod_id`, `prod_name`, `cat_name
                         <?php
                         $index = 0;
                         while ($row = mysqli_fetch_array($selectionProduct)) {
+                            if ($row['isDeleted'] == 0) {
                         ?>
-                            <tr>
-                                <td><?php echo ++$index ?></td>
-                                <td><?php echo $row['prod_name'] ?></td>
-                                <td><?php echo $row['cat_name'] ?></td>
-                                <td><?php echo $row['prod_unit'] ?></td>
-                                <td><?php echo $row['prod_size'] ?></td>
-                                <td><?php echo $row['prod_quantity'] ?></td>
-                                <td><?php echo $row['prod_remarks'] ?></td>
-                                <td>
-                                    <a href=""> <i class="fas fa-pencil-alt"></i></a>
-                                </td>
-                                <td>
-                                    <a href=""><i class="fas fa-trash-alt"></i></a>
-                                </td>
-                            </tr>
-                        <?php  } ?>
+                                <tr>
+                                    <td><?php echo ++$index ?></td>
+                                    <td><?php echo $row['prod_name'] ?></td>
+                                    <td><?php echo $row['cat_name'] ?></td>
+                                    <td><?php echo $row['prod_unit'] ?></td>
+                                    <td><?php echo $row['prod_size'] ?></td>
+                                    <td><?php echo $row['prod_quantity'] ?></td>
+                                    <td><?php echo $row['prod_remarks'] ?></td>
+                                    <td>
+                                        <a href=""> <i class="fas fa-pencil-alt"></i></a>
+                                    </td>
+                                    <td>
+                                        <a href=""><i class="fas fa-trash-alt"></i></a>
+                                    </td>
+                                </tr>
+                        <?php  }
+                        } ?>
 
                     </table>
 
