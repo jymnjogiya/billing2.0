@@ -25,7 +25,7 @@ if (isset($_POST['prod-save'])) {
 $selectionCategory = mysqli_query($con, "SELECT * FROM `category`");
 
 // for selection from db of product table
-$selectionProduct = mysqli_query($con, "SELECT `prod_id`, `prod_name`, `cat_name`, `prod_unit`, `prod_size`, `prod_quantity`, `prod_remarks` FROM `product`,`category` WHERE prod_cat=category.cat_id")
+$selectionProduct = mysqli_query($con, "SELECT `prod_id`, `prod_name`, `cat_name`, `prod_unit`, `prod_size`, `prod_quantity`, `prod_remarks`,product.isDeleted FROM `product`,`category` WHERE prod_cat=category.cat_id")
 
 ?>
 <!DOCTYPE html>
