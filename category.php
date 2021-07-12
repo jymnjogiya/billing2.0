@@ -1,5 +1,9 @@
 <?php
 include './dbconnect.php';
+session_start();
+if($_SESSION['islogged'] == false){
+    header('Location: ./login.php');
+}
 
 //varaible for category
 $catUpdate = false;
@@ -64,7 +68,7 @@ if (isset($_POST['cat-update'])) {
     $catId = $_POST['catId'];
     $catName = $_POST['cat-name'];
     $catRemark = $_POST['cat-remark'];
-    
+
     mysqli_query($con, "UPDATE `category` SET `cat_name`='$catName',`cat_remark`='$catRemark' WHERE cat_id='$catId'");
     header('location: ./category.php');
 }
@@ -107,10 +111,10 @@ if (isset($_POST['prod-update'])) {
     $proUnit = $_POST['prod-unit'];
     $proSize = $_POST['prod-size'];
     $proQty = $_POST['prod-quantity'];
-    //note :- remark is not updating!!!!
+
     $proRemark = $_POST['prod-remark'];
     $proCat = $_POST['prod-category'];
-    
+
     mysqli_query($con, "UPDATE `product` SET `prod_name`='$proName',`prod_cat`='$proCat',`prod_unit`='$proUnit',`prod_size`='$proSize',`prod_quantity`='$proQty',`prod_remarks`='$proRemark' WHERE `prod_id` = '$proId'");
     header('location: ./category.php');
 }
@@ -154,17 +158,16 @@ if (isset($_GET['proDel'])) {
         </div>
 
         <div class="pro-cat">
-            <div class="content" id="category-content-div">
+            <div class="content" id="category-content-div" style="display: <?php if ($proUpdate == true) echo "none" ?> ">
                 <div class="section-one ">
                     <div class="head">
                         <h1>Category Details</h1>
                         <button class="add" id="category-add">Add</button>
                     </div>
                     <!-- Category form -->
-                    <form action="" id="category-form" class="grid-form hidden" method="POST"
-                    style="display: <?php if ($catUpdate == true) echo "grid" ?>  ">
-                    <input type="hidden" name="catId" value="<?php echo $catId; ?>">
-                    
+                    <form action="" id="category-form" class="grid-form hidden" method="POST" style="display: <?php if ($catUpdate == true) echo "grid" ?>  ">
+                        <input type="hidden" name="catId" value="<?php echo $catId; ?>">
+
                         <div class="input">
                             <label for="name">Name:</label>
                             <input type="text" placeholder="Enter name" name="cat-name" value="<?php echo $catName ?>" required><br><br>
@@ -174,14 +177,14 @@ if (isset($_GET['proDel'])) {
                             <input type="text" name="cat-remark" placeholder="Enter remarks" value="<?php echo $catRemark ?>"><br><br>
                         </div>
                         <?php if ($catUpdate == true) : ?>
-                        <input type="submit" class="button" id="submit" name="cat-update" value="Update">
+                            <input type="submit" class="button" id="submit" name="cat-update" value="Update">
                         <?php else :  ?>
-                        <input type="submit" class="button" id="submit" name="cat-save" value="Save">
+                            <input type="submit" class="button" id="submit" name="cat-save" value="Save">
                         <?php endif ?>
                     </form>
 
                     <!-- Category Table -->
-                    <table class="content-table cust-table table-margin" id="category-table">
+                    <table class="content-table cust-table table-margin" id="category-table" style="display: <?php if ($catUpdate == true || $proUpdate == true) echo "none" ?> ">
                         <tr>
                             <th>Sr. No</th>
                             <th>Name</th>
@@ -214,16 +217,15 @@ if (isset($_GET['proDel'])) {
             </div>
 
             <!-- For product list -->
-            <div class="content" id="product-list-div">
+            <div class="content" id="product-list-div" style="display: <?php if ($catUpdate == true) echo "none" ?> ">
                 <div class="section-one ">
                     <div class="head">
                         <h1>Product Details</h1>
                         <button class="add" id="product-add">Add</button>
                     </div>
                     <!-- Product form -->
-                    <form action="#" id="product-form" class="grid-form hidden" 
-                    style="display: <?php if ($proUpdate == true) echo "grid" ?>" method="POST">
-                    <input type="hidden" name="proId" value="<?php echo $proId; ?>">
+                    <form action="" id="product-form" class="grid-form hidden" style="display: <?php if ($proUpdate == true) echo "grid" ?>" method="POST">
+                        <input type="hidden" name="proId" value="<?php echo $proId; ?>">
                         <div class="input">
                             <label for="name">Name:</label>
                             <input type="text" placeholder="Enter name" name="prod-name" value="<?php echo $proName ?>" required><br><br>
@@ -255,21 +257,20 @@ if (isset($_GET['proDel'])) {
                         </div>
                         <div class="input">
                             <label>Remarks:</label>
-                            <input type="text" placeholder="Enter remarks" name="prod-remark"
-                            value="<?php echo $proRemark ?>" required><br><br>
+                            <input type="text" placeholder="Enter remarks" name="prod-remark" value="<?php echo $proRemark ?>" required><br><br>
                         </div>
 
-                      
+
                         <?php if ($proUpdate == true) : ?>
-                        <input type="submit" class="button" id="submit" name="prod-update" value="Update">
+                            <input type="submit" class="button" id="submit" name="prod-update" value="Update">
                         <?php else :  ?>
-                        <input type="submit" class="button" id="submit" name="prod-save" value="Save">
+                            <input type="submit" class="button" id="submit" name="prod-save" value="Save">
                         <?php endif ?>
 
                     </form>
 
                     <!-- Product Table -->
-                    <table class="content-table cust-table table-margin" id="product-table">
+                    <table class="content-table cust-table table-margin" id="product-table" style="display: <?php if ($catUpdate == true || $proUpdate == true) echo "none" ?> ">
                         <tr>
 
                             <th>Sr. No</th>

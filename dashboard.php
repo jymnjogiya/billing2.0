@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['islogged'] == false){
+    header('Location: ./login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

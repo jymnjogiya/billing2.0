@@ -1,5 +1,10 @@
 <?php
 include_once './dbconnect.php';
+session_start();
+if($_SESSION['islogged'] == false){
+    header('Location: ./login.php');
+}
+
 $update = false;
 $bank = "";
 $companyName = "";
